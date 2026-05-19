@@ -58,8 +58,9 @@ body {
 .neon-blue { color: #00f3ff; border-color: #00f3ff; box-shadow: inset 0 0 10px #00f3ff, 0 0 10px #00f3ff; }
 .neon-pink { color: #ff00ff; border-color: #ff00ff; box-shadow: inset 0 0 10px #ff00ff, 0 0 10px #ff00ff; }
 .neon-green { color: #39ff14; border-color: #39ff14; box-shadow: inset 0 0 10px #39ff14, 0 0 10px #39ff14; }
-/* Nouvelle couleur pour le Défi 4 */
 .neon-yellow { color: #ffea00; border-color: #ffea00; box-shadow: inset 0 0 10px #ffea00, 0 0 10px #ffea00; }
+/* Nouvelle couleur orange rétro pour le Défi 4bis */
+.neon-orange { color: #ff6c00; border-color: #ff6c00; box-shadow: inset 0 0 10px #ff6c00, 0 0 10px #ff6c00; }
 
 /* Comportement dynamique au survol de la souris (Agrandissement et flash blanc) */
 .menu-item:hover {
