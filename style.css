@@ -1,3 +1,4 @@
+/* Configuration globale de l'écran et centrage complet du menu */
 body {
     background-color: #050505;
     color: #fff;
@@ -10,6 +11,7 @@ body {
     overflow: hidden;
 }
 
+/* Style de l'encadré central (Le panneau de la borne) */
 .arcade-container {
     text-align: center;
     border: 4px solid #333;
@@ -18,9 +20,10 @@ body {
     box-shadow: 0 0 20px rgba(255, 0, 255, 0.2);
 }
 
+/* Titre principal : police pixelisée et effets de halo néon violet superposés */
 .neon-title {
     font-family: 'Press Start 2P', cursive;
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #fff;
     text-shadow: 
         0 0 7px #fff,
@@ -30,30 +33,35 @@ body {
         0 0 82px #bc13fe,
         0 0 92px #bc13fe;
     margin-bottom: 60px;
-    animation: pulsate 1.5s infinite alternate;
+    animation: pulsate 1.5s infinite alternate; /* Appel de l'animation de pulsation */
 }
 
+/* Alignement vertical des boutons avec espacement régulier */
 .menu-grid {
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
 
+/* Base commune pour tous les boutons (liens) du menu */
 .menu-item {
     text-decoration: none;
     font-size: 1.5rem;
     padding: 15px 40px;
     border: 3px solid transparent;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease; /* Fluidité de l'effet de survol */
     position: relative;
     font-weight: bold;
 }
 
-/* Couleurs Néon */
+/* Déclinaisons des couleurs néon pour chaque bouton */
 .neon-blue { color: #00f3ff; border-color: #00f3ff; box-shadow: inset 0 0 10px #00f3ff, 0 0 10px #00f3ff; }
 .neon-pink { color: #ff00ff; border-color: #ff00ff; box-shadow: inset 0 0 10px #ff00ff, 0 0 10px #ff00ff; }
 .neon-green { color: #39ff14; border-color: #39ff14; box-shadow: inset 0 0 10px #39ff14, 0 0 10px #39ff14; }
+/* Nouvelle couleur pour le Défi 4 */
+.neon-yellow { color: #ffea00; border-color: #ffea00; box-shadow: inset 0 0 10px #ffea00, 0 0 10px #ffea00; }
 
+/* Comportement dynamique au survol de la souris (Agrandissement et flash blanc) */
 .menu-item:hover {
     background: #fff;
     color: #000;
@@ -61,6 +69,7 @@ body {
     transform: scale(1.1);
 }
 
+/* Style et gestion du clignotement du message du bas */
 .insert-coin {
     margin-top: 50px;
     font-family: 'Press Start 2P', cursive;
@@ -69,11 +78,15 @@ body {
     animation: blink 0.8s infinite;
 }
 
+/* LOGIQUE DES ANIMATIONS */
+
+/* Animation de pulsation lumineuse du titre */
 @keyframes pulsate {
     100% { text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #bc13fe, 0 0 80px #bc13fe; }
     0% { text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 10px #bc13fe, 0 0 45px #bc13fe; }
 }
 
+/* Animation de clignotement (opacité de 0% à 100%) */
 @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
