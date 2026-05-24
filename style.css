@@ -6,32 +6,31 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Permet à la page de s'agrandir si le contenu dépasse */
+    min-height: 100vh;
     margin: 0;
-    padding: 20px; /* Évite que la borne colle aux bords sur petit écran */
+    padding: 20px;
     box-sizing: border-box;
-    overflow-y: auto; /* Active le défilement vertical uniquement si nécessaire */
+    overflow-y: auto;
 }
 
-/* Style de l'encadré central (Le panneau de la borne) */
+/* Style de l'encadré central */
 .arcade-container {
     text-align: center;
     border: 4px solid #333;
-    padding: 40px 20px; /* Ajustement du padding pour être plus fluide sur mobile */
+    padding: 40px 20px;
     background: linear-gradient(180deg, rgba(20,20,20,1) 0%, rgba(0,0,0,1) 100%);
     box-shadow: 0 0 20px rgba(255, 0, 255, 0.2);
     width: 100%;
-    max-width: 500px; /* Limite la largeur maximale pour garder un beau format vertical */
+    max-width: 500px;
     box-sizing: border-box;
 }
 
-/* Titre principal : Taille responsive et effets de halo préservés */
+/* Titre principal */
 .neon-title {
     font-family: 'Press Start 2P', cursive;
-    /* La fonction clamp() adapte la police à la taille de l'écran (Min : 1.5rem, Idéal : 5vw, Max : 2.5rem) */
-    font-size: clamp(1.5rem, 5vw, 2.5rem); 
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
     color: #fff;
-    line-height: 1.4; /* Donne de l'espace si le titre passe sur deux lignes sur petit mobile */
+    line-height: 1.4;
     text-shadow: 
         0 0 7px #fff,
         0 0 10px #fff,
@@ -39,46 +38,43 @@ body {
         0 0 42px #bc13fe,
         0 0 82px #bc13fe,
         0 0 92px #bc13fe;
-    margin-bottom: 40px; /* Réduit légèrement pour laisser de l'air aux boutons */
+    margin-bottom: 40px;
     animation: pulsate 1.5s infinite alternate;
 }
 
-/* Alignement vertical des boutons avec espacement régulier */
 .menu-grid {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Léger ajustement pour l'harmonie visuelle globale */
+    gap: 20px;
 }
 
-/* Base commune pour tous les boutons (liens) du menu */
 .menu-item {
     text-decoration: none;
-    font-size: clamp(1.1rem, 4vw, 1.5rem); /* Taille du texte du bouton adaptable également */
-    padding: 15px 20px; /* Padding latéral réduit pour éviter que le bouton sorte de sa boîte */
+    font-size: clamp(1.1rem, 4vw, 1.5rem);
+    padding: 15px 20px;
     border: 3px solid transparent;
     transition: all 0.3s ease;
     position: relative;
     font-weight: bold;
-    display: block; /* Force le bouton à bien occuper l'espace attribué */
+    display: block;
     box-sizing: border-box;
 }
 
-/* Déclinaisons des couleurs néon pour chaque bouton */
+/* Déclinaisons des couleurs néon */
 .neon-blue { color: #00f3ff; border-color: #00f3ff; box-shadow: inset 0 0 10px #00f3ff, 0 0 10px #00f3ff; }
 .neon-pink { color: #ff00ff; border-color: #ff00ff; box-shadow: inset 0 0 10px #ff00ff, 0 0 10px #ff00ff; }
 .neon-green { color: #39ff14; border-color: #39ff14; box-shadow: inset 0 0 10px #39ff14, 0 0 10px #39ff14; }
 .neon-yellow { color: #ffea00; border-color: #ffea00; box-shadow: inset 0 0 10px #ffea00, 0 0 10px #ffea00; }
-.neon-orange { color: #ff6c00; border-color: #ff6c00; box-shadow: inset 0 0 10px #ff6c00, 0 0 10px #ff6c00; }
+/* Nouvelle couleur néon rouge pour le Défi 5 */
+.neon-red { color: #ff3131; border-color: #ff3131; box-shadow: inset 0 0 10px #ff3131, 0 0 10px #ff3131; }
 
-/* Comportement dynamique au survol de la souris (Agrandissement et flash blanc) */
 .menu-item:hover {
     background: #fff;
     color: #000;
     box-shadow: 0 0 40px #fff;
-    transform: scale(1.05); /* Échelle de survol légèrement réduite à 5% pour éviter les coupures de bordure */
+    transform: scale(1.05);
 }
 
-/* Style et gestion du clignotement du message du bas */
 .insert-coin {
     margin-top: 40px;
     font-family: 'Press Start 2P', cursive;
@@ -88,14 +84,11 @@ body {
 }
 
 /* LOGIQUE DES ANIMATIONS */
-
-/* Animation de pulsation lumineuse du titre */
 @keyframes pulsate {
     100% { text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #bc13fe, 0 0 80px #bc13fe; }
     0% { text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 10px #bc13fe, 0 0 45px #bc13fe; }
 }
 
-/* Animation de clignotement */
 @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
