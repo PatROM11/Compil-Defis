@@ -5,40 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Les Défis de Pat - Arcade Edition</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* CSS intégré pour ne gérer qu'un seul fichier */
+        body {
+            background-color: #050505;
+            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+
+        .arcade-container {
+            text-align: center;
+            border: 4px solid #333;
+            padding: 40px 20px;
+            background: linear-gradient(180deg, rgba(20,20,20,1) 0%, rgba(0,0,0,1) 100%);
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.2);
+            width: 100%;
+            max-width: 500px;
+            box-sizing: border-box;
+        }
+
+        .neon-title {
+            font-family: 'Press Start 2P', cursive;
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            color: #fff;
+            line-height: 1.4;
+            text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #bc13fe, 0 0 82px #bc13fe, 0 0 92px #bc13fe;
+            margin-bottom: 40px;
+            animation: pulsate 1.5s infinite alternate;
+        }
+
+        .menu-grid { display: flex; flex-direction: column; gap: 20px; }
+
+        .menu-item {
+            text-decoration: none;
+            font-size: clamp(0.9rem, 3.5vw, 1.3rem);
+            padding: 15px 20px;
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            font-weight: bold;
+            display: block;
+            box-sizing: border-box;
+        }
+
+        /* Couleurs néon */
+        .neon-blue { color: #00f3ff; border-color: #00f3ff; box-shadow: inset 0 0 10px #00f3ff, 0 0 10px #00f3ff; }
+        .neon-pink { color: #ff00ff; border-color: #ff00ff; box-shadow: inset 0 0 10px #ff00ff, 0 0 10px #ff00ff; }
+        .neon-green { color: #39ff14; border-color: #39ff14; box-shadow: inset 0 0 10px #39ff14, 0 0 10px #39ff14; }
+        .neon-yellow { color: #ffea00; border-color: #ffea00; box-shadow: inset 0 0 10px #ffea00, 0 0 10px #ffea00; }
+        .neon-cyan { color: #00d4ff; border-color: #00d4ff; box-shadow: inset 0 0 10px #00d4ff, 0 0 10px #00d4ff; }
+        .neon-red { color: #ff3131; border-color: #ff3131; box-shadow: inset 0 0 10px #ff3131, 0 0 10px #ff3131; }
+        .neon-purple { color: #bf00ff; border-color: #bf00ff; box-shadow: inset 0 0 10px #bf00ff, 0 0 10px #bf00ff; }
+        .neon-emerald { color: #00ff88; border-color: #00ff88; box-shadow: inset 0 0 10px #00ff88, 0 0 10px #00ff88; }
+        .neon-skyblue { color: #87ceeb; border-color: #87ceeb; box-shadow: inset 0 0 10px #87ceeb, 0 0 10px #87ceeb; }
+        .neon-white { color: #ffffff; border-color: #ffffff; box-shadow: inset 0 0 10px #ffffff, 0 0 10px #ffffff; }
+
+        .menu-item:hover { background: #fff; color: #000; box-shadow: 0 0 40px #fff; transform: scale(1.05); }
+
+        .insert-coin { margin-top: 40px; font-family: 'Press Start 2P', cursive; font-size: clamp(0.6rem, 2vw, 0.8rem); color: #ffcc00; animation: blink 0.8s infinite; }
+
+        @keyframes pulsate {
+            100% { text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #bc13fe, 0 0 80px #bc13fe; }
+            0% { text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 10px #bc13fe, 0 0 45px #bc13fe; }
+        }
+
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+    </style>
 </head>
 <body>
     <div class="arcade-container">
         <h1 class="neon-title">LES DÉFIS DE PAT</h1>
         
         <div class="menu-grid">
-            <a href="https://patrom11.github.io/Defi1-pat/" class="menu-item neon-blue">
-                <span>DÉFI 1 : AFFIRMATION</span>
-            </a>
-            <a href="https://patrom11.github.io/Defi2-pat/" class="menu-item neon-pink">
-                <span>DÉFI 2 : CALCUL</span>
-            </a>
-            <a href="https://patrom11.github.io/Defi3-pat/" class="menu-item neon-green">
-                <span>DÉFI 3 : OBSERVATION</span>
-            </a>
-            <a href="https://patrom11.github.io/Defi4-Patroid/" class="menu-item neon-yellow">
-                <span>DÉFI 4 : PATROID</span>
-            </a>
-            <a href="https://patrom11.github.io/Defi4bis-Patroid_Fullscreen/" class="menu-item neon-cyan">
-                <span>DÉFI 4bis : PATROID FULLSCREEN</span>
-            </a>
-            <a href="https://patrom11.github.io/Defi5-Pattank/" class="menu-item neon-red">
-                <span>DÉFI 5 : PAT-TANK</span>
-            </a>
-            <a href="https://patrom11.github.io/Defi6-La_Sueca/" class="menu-item neon-purple">
-                <span>DÉFI 6 : LA SUECA</span>
-            </a>
-            <a href="https://patrom11.github.io/Defi7-La_belote/" class="menu-item neon-emerald">
-                <span>DÉFI 7 : LA BELOTE</span>
-            </a>
-            <a href="https://patrom11.github.io/Defi8_WIP-portrait-robot/" class="menu-item neon-skyblue">
-                <span>DÉFI 8-WIP: PORTRAIT ROBOT</span>
-            </a>
+            <a href="https://patrom11.github.io/Defi1-pat/" class="menu-item neon-blue"><span>DÉFI 1 : AFFIRMATION</span></a>
+            <a href="https://patrom11.github.io/Defi2-pat/" class="menu-item neon-pink"><span>DÉFI 2 : CALCUL</span></a>
+            <a href="https://patrom11.github.io/Defi3-pat/" class="menu-item neon-green"><span>DÉFI 3 : OBSERVATION</span></a>
+            <a href="https://patrom11.github.io/Defi4-Patroid/" class="menu-item neon-yellow"><span>DÉFI 4 : PATROID</span></a>
+            <a href="https://patrom11.github.io/Defi4bis-Patroid_Fullscreen/" class="menu-item neon-cyan"><span>DÉFI 4bis : PATROID FULLSCREEN</span></a>
+            <a href="https://patrom11.github.io/Defi5-Pattank/" class="menu-item neon-red"><span>DÉFI 5 : PAT-TANK</span></a>
+            <a href="https://patrom11.github.io/Defi6-La_Sueca/" class="menu-item neon-purple"><span>DÉFI 6 : LA SUECA</span></a>
+            <a href="https://patrom11.github.io/Defi7-La_belote/" class="menu-item neon-emerald"><span>DÉFI 7 : LA BELOTE</span></a>
+            <a href="https://patrom11.github.io/Defi8_WIP-portrait-robot/" class="menu-item neon-skyblue"><span>DÉFI 8 : WIP-PORTRAIT-ROBOT</span></a>
+            <a href="https://patrom11.github.io/Defi9-Patdraw/" class="menu-item neon-white"><span>DÉFI 9 : PATDRAW</span></a>
         </div>
 
         <div class="insert-coin">INSERT COIN TO PLAY</div>
