@@ -29,8 +29,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 100; /* Devant tout le reste */
-            pointer-events: none; /* Crucial : les clics passent à travers */
+            z-index: 100;
+            pointer-events: none;
             overflow: hidden;
         }
 
@@ -48,7 +48,7 @@
 
         @keyframes twinkle {
             0%, 100% { opacity: 0.1; }
-            50% { opacity: 0.6; } /* Transparence ajustée pour ne pas gêner la lecture */
+            50% { opacity: 0.6; }
         }
 
         /* --- DESIGN DE LA BORNE --- */
@@ -99,6 +99,7 @@
         .neon-emerald { color: #00ff88; border-color: #00ff88; box-shadow: inset 0 0 10px #00ff88, 0 0 10px #00ff88; }
         .neon-skyblue { color: #87ceeb; border-color: #87ceeb; box-shadow: inset 0 0 10px #87ceeb, 0 0 10px #87ceeb; }
         .neon-white { color: #ffffff; border-color: #ffffff; box-shadow: inset 0 0 10px #ffffff, 0 0 10px #ffffff; }
+        .neon-orange { color: #ff8c00; border-color: #ff8c00; box-shadow: inset 0 0 10px #ff8c00, 0 0 10px #ff8c00; }
 
         .menu-item:hover { background: #fff; color: #000; box-shadow: 0 0 40px #fff; transform: scale(1.05); }
 
@@ -124,6 +125,7 @@
             <a href="https://patrom11.github.io/Defi7-La_belote/" class="menu-item neon-emerald"><span>DÉFI 7 : LA BELOTE</span></a>
             <a href="https://patrom11.github.io/Defi8_WIP-portrait-robot/" class="menu-item neon-skyblue"><span>DÉFI 8 : WIP-PORTRAIT-ROBOT</span></a>
             <a href="https://patrom11.github.io/Defi9-Patdraw/" class="menu-item neon-white"><span>DÉFI 9 : PATDRAW</span></a>
+            <a href="https://patrom11.github.io/Defi10-Pendu/" class="menu-item neon-orange"><span>DÉFI 10 : PENDU</span></a>
         </div>
         <div class="insert-coin">INSERT COIN TO PLAY</div>
     </div>
@@ -142,7 +144,7 @@
             container.appendChild(star);
             setTimeout(() => star.remove(), 10000);
         }
-        setInterval(createStar, 200); // Génère un peu plus d'étoiles pour un effet visuel plus présent
+        setInterval(createStar, 200);
     </script>
 </body>
 </html>
